@@ -2,6 +2,7 @@ package ui;
 
 
 import PageObjects.HomePage;
+
 import static generals.Utils.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -29,7 +30,7 @@ public class ContactFormTest
 
     @Test (priority=1)
     public void loginTest() throws IOException {
-        HomePage HP=new HomePage();
+        HomePage HP = new HomePage();
         HP.OpenApplication(HOME_PAGE_URL)
         .loginAppWithBlankData()
         .loginAppWithWrongData(USER_NAME,PASSWORD);
@@ -39,8 +40,10 @@ public class ContactFormTest
     }
     @Test (priority=2)
     public void navigateTest() throws IOException {
-        HomePage hp=new HomePage();
-        hp.navigateSampleForm();
+        HomePage hp=new HomePage()
+        .navigateSampleForm()
+        .formFillUp();
+
         Assert.assertEquals(whatIsThevalue("HeaderOfSampleForm"),"Sample Email and Contact Forms");
     }
 }
