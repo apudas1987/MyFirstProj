@@ -37,6 +37,7 @@ public class ContactFormTest
         Assert.assertEquals(whatIsThevalue("Heading"),"myContactForm.com®");
         Assert.assertEquals(whatIsThevalue("LoginError1"),LOGIN_DETAILS_ERROR);
         Assert.assertEquals(whatIsThevalue("LoginError2"),INCORRECT_LOGIN_ERROR);
+
     }
     @Test (priority=2)
     public void navigateTest() throws IOException {
